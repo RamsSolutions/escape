@@ -26,10 +26,6 @@ public class MemberResources {
         }
         if(!sc.isUserInRole("admin")){
             Response.status(400).entity("Not logged in").build();
-//            try {
-//                Thread.sleep(5000);
-//            } catch (InterruptedException ex) {
-//            }
             return Response.temporaryRedirect(uri).build();
         }
         return Response.status(200).entity("In member path").build();
